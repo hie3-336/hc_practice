@@ -3,6 +3,7 @@
     width: 960px;
     padding: 0 4%;
     margin: 0 auto;
+    background-color: aquamarine;
 }
 /*iPadの設定*/
 @media screen and (min-width: 600px){
