@@ -1,7 +1,7 @@
 /*iPhoneおよび共通設定*/
 .container {
     max-width: 960px;
-    width: auto;
+    width: 960;
     padding: 0 4%;
     margin: 0 auto;
 
@@ -14,35 +14,42 @@ header {
 }
 
 .resume {
+    height: auto;
     display:flex;
     justify-content:center;
     align-items:center;
     background-color: #000;
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     align-items: center;
     margin: 10px auto 10px 20px;
-    padding: 10px 10px;
-
 
 }
 .menu {
-
     text-align: right;
 }
 
 header ul {
     background-color: blue;
     display: flex;
-    font-size: 18px;
+    font-size: 14px;
     list-style-type: none;
-    margin: 10px auto 10px 20px;
-    margin-right: 0;
+    margin: 10px 0px 10px 0px;
 }
 
 header li {
     justify-content: center;
-    margin: 5% 30px;
+    margin: 5% 10px;
+}
+
+.mainvisual {
+    display: flex;
+    justify-content: center;
+}
+
+.mainvisual img{
+    height: 600px;
+
 }
 
 
