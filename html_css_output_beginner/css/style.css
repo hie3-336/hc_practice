@@ -131,6 +131,12 @@ header li {
 }
 
 
+footer {
+    text-align: center;
+    font-size: 10px;
+    padding-bottom: 10px;
+    border-bottom: #000 solid 5px;
+}
 
 /*iPadの設定*/
 @media screen and (min-width: 600px){
