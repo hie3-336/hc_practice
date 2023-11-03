@@ -102,14 +102,34 @@ header li {
     margin: 0 auto;
 }
 
+
+
 .profile {
     padding: 0 4%;
-
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 100px 310px 310px 310px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 90px;
 }
 
+.profile h1 {
+    font-size: 28px;
+}
+
+.profile_contents h2 {
+    margin-bottom: 20px;
+}
+
+.profile_contents p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
 .profile img {
     width: 100%;
 }
+
 
 
 /*iPadの設定*/
