@@ -2,14 +2,12 @@
 .container {
     max-width: 960px;
     width: auto;
-    padding: 0 4%;
+
     margin: 0 auto;
 
 }
 
 header {
-    background-color: aquamarine;
-    height: auto;
     display: flex;
 }
 
@@ -18,11 +16,13 @@ header {
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color: #000;
+    font-weight: bold;
+    background-color: #384152;
     color: #fff;
     font-size: 20px;
     align-items: center;
     margin: 10px auto 10px 20px;
+    padding: 0px 18px;
 
 }
 .menu {
@@ -30,7 +30,7 @@ header {
 }
 
 header ul {
-    background-color: blue;
+
     display: flex;
     font-size: 14px;
     list-style-type: none;
@@ -39,7 +39,7 @@ header ul {
 
 header li {
     justify-content: center;
-    margin: 5% 10px;
+    margin: 6% 14px;
 }
 
 .mainvisual {
