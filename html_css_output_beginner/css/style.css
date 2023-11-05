@@ -130,7 +130,6 @@ header li {
     width: 100%;
 }
 
-
 footer {
     text-align: center;
     font-size: 10px;
@@ -181,7 +180,7 @@ footer {
         grid-row: 2;
         background-color: blue;
         margin-top: 10px;
-        margin-left: 45px;
+        margin-left: 35px;
         text-align: left;
     }
 
@@ -192,8 +191,9 @@ footer {
         text-align: left;
         line-height: 24px;
         background-color: chartreuse;
-        margin-left: 45px;
+        margin-left: 35px;
     }
+
     .introduction img {
         grid-column: 2;
         grid-row: 2 / 4;
@@ -201,11 +201,22 @@ footer {
         border-radius: 50%;
 
     }
+
     .face_photo {
         padding-top: 10px;
     }
 
-
+    .profile {
+        width: 960px;
+        padding: 0 4%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 90px;
+    }
     
+
 }
 
