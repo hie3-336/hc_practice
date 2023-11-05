@@ -151,6 +151,14 @@ footer {
         
     }
 
+    .resume {
+        margin-left: 45px;
+    }
+
+    header ul {
+        margin-right: 20px;
+    }
+
     .mainvisual img{
         width: 1920px;
         height: 600px;
@@ -161,11 +169,11 @@ footer {
     box-sizing: border-box;
         width: 960px;
         margin: 100px auto 0px auto;
-        grid-template-columns: 5fr 1fr;
-        grid-template-rows: 100px 50px 100px;
+        grid-template-columns: 4.5fr 1fr;
+        grid-template-rows: 80px 50px 100px;
         text-align: center;
         gap: 0px;
-        margin-top: 70px;
+        margin-top: 90px;
         padding: 0 4%;
         background-color: darkkhaki;
    }
@@ -179,8 +187,8 @@ footer {
         grid-column: 1;
         grid-row: 2;
         background-color: blue;
-        margin-top: 10px;
-        margin-left: 35px;
+        margin-top: 20px;
+        margin-left: 40px;
         text-align: left;
     }
 
@@ -191,7 +199,7 @@ footer {
         text-align: left;
         line-height: 24px;
         background-color: chartreuse;
-        margin-left: 35px;
+        margin-left: 40px;
     }
 
     .introduction img {
@@ -213,17 +221,24 @@ footer {
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 3fr;
+        grid-template-rows: 100px 260px;
         gap: 15px;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 80px;
         margin-bottom: 90px;
     }
 
     .profile .title {
         grid-column: 1 / 4;
     }
+    .profile_contents {
+        background-color: mediumvioletred;
+    }
     
+    footer {
+        font-size: 12px;
+        border-bottom: #000 solid 1px;
+    }
 
 }
 
