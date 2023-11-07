@@ -1,10 +1,7 @@
-/*iPhoneおよび共通設定*/
+/*共通設定*/
 .container {
     max-width: 960px;
-    width: auto;
-
     margin: 0 auto;
-
 }
 
 header {
@@ -12,10 +9,7 @@ header {
 }
 
 .resume {
-    height: auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
     font-weight: bold;
     background-color: #384152;
     color: #fff;
@@ -23,14 +17,9 @@ header {
     align-items: center;
     margin: 10px auto 10px 20px;
     padding: 0px 18px;
-
-}
-.menu {
-    text-align: right;
 }
 
 header ul {
-
     display: flex;
     font-size: 14px;
     list-style-type: none;
@@ -39,7 +28,7 @@ header ul {
 
 header li {
     justify-content: center;
-    margin: 6% 14px;
+    margin: 6% 17px;
 }
 
 .mainvisual {
@@ -57,16 +46,12 @@ header li {
     grid-template-rows: 50px 30px 100px 200px;
     text-align: center;
     gap: 30px;
-    margin-top: 70px;
+    margin-top: 80px;
     padding: 0 4%;
-    background-color: darkkhaki;
-}
-.title {
-    background-color: aqua;
+
 }
 
 .name {
-    background-color: blue;
     margin-top: 10px;
 }
 
@@ -79,21 +64,21 @@ header li {
     border-bottom: #000 1px solid;
     padding-bottom: 7px;
     font-size: 32px;
-    background-color: burlywood;
+
 
 }
 .introduction h2 {
     display: inline;
     font-size: 18px;
     margin-top: 10px;
-    background-color: coral;
+
 
 }
 .introduction p{
     font-size: 18px;
     text-align: left;
     line-height: 24px;
-    background-color: chartreuse;
+
 }
 
 .introduction img {
@@ -102,15 +87,13 @@ header li {
     margin: 0 auto;
 }
 
-
-
 .profile {
     padding: 0 4%;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 100px 310px 310px 310px;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 90px;
 }
 
@@ -126,6 +109,7 @@ header li {
     margin-bottom: 10px;
     font-size: 14px;
 }
+
 .profile img {
     width: 100%;
 }
@@ -137,18 +121,12 @@ footer {
     border-bottom: #000 solid 5px;
 }
 
-/*iPadの設定*/
+/*PCレスポンシブ設定*/
 @media screen and (min-width: 600px){
-
-    .container {
-        width: 960px;
-    }
 
     header {
         box-sizing: border-box;
         padding: 0 4%;
-        background-color: aqua;
-        
     }
 
     .resume {
@@ -166,27 +144,20 @@ footer {
     }
 
    .introduction {
-    box-sizing: border-box;
+        box-sizing: border-box;
         width: 960px;
         margin: 100px auto 0px auto;
         grid-template-columns: 4.5fr 1fr;
         grid-template-rows: 80px 50px 100px;
-        text-align: center;
         gap: 0px;
         margin-top: 90px;
-        padding: 0 4%;
-        background-color: darkkhaki;
    }
+
    .title {
         grid-column: 1 / 3;
-        grid-row: 1;
-        background-color: aqua;
     }
 
     .name {
-        grid-column: 1;
-        grid-row: 2;
-        background-color: blue;
         margin-top: 20px;
         margin-left: 40px;
         text-align: left;
@@ -195,19 +166,12 @@ footer {
     .introduction p{
         grid-column: 1;
         grid-row: 3;
-        font-size: 18px;
-        text-align: left;
-        line-height: 24px;
-        background-color: chartreuse;
         margin-left: 40px;
     }
 
     .introduction img {
         grid-column: 2;
         grid-row: 2 / 4;
-        height: 100px;
-        border-radius: 50%;
-
     }
 
     .face_photo {
@@ -217,22 +181,14 @@ footer {
     .profile {
         box-sizing: border-box;
         width: 960px;
-        padding: 0 4%;
-        margin: 0 auto;
-        display: grid;
+        margin: 80px auto 90px auto;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 100px 260px;
         gap: 15px;
-        text-align: center;
-        margin-top: 80px;
-        margin-bottom: 90px;
     }
 
     .profile .title {
         grid-column: 1 / 4;
-    }
-    .profile_contents {
-        background-color: mediumvioletred;
     }
     
     footer {
