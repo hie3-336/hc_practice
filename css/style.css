@@ -1,0 +1,200 @@
+/*共通設定*/
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+}
+
+.resume {
+    display: flex;
+    font-weight: bold;
+    background-color: #384152;
+    color: #fff;
+    font-size: 20px;
+    align-items: center;
+    margin: 10px auto 10px 20px;
+    padding: 0px 18px;
+}
+
+header ul {
+    display: flex;
+    font-size: 14px;
+    list-style-type: none;
+    margin: 10px 0px 10px 0px;
+}
+
+header li {
+    justify-content: center;
+    margin: 6% 17px;
+}
+
+.mainvisual {
+    display: flex;
+    justify-content: center;
+}
+
+.mainvisual img{
+    height: 600px;
+}
+
+.introduction {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50px 30px 100px 200px;
+    text-align: center;
+    gap: 30px;
+    margin-top: 80px;
+    padding: 0 4%;
+
+}
+
+.name {
+    margin-top: 10px;
+}
+
+.face_photo {
+    padding-top: 30px;
+}
+
+.title h1 {
+    display: inline;
+    border-bottom: #000 1px solid;
+    padding-bottom: 7px;
+    font-size: 32px;
+
+
+}
+.introduction h2 {
+    display: inline;
+    font-size: 18px;
+    margin-top: 10px;
+
+
+}
+.introduction p{
+    font-size: 18px;
+    text-align: left;
+    line-height: 24px;
+
+}
+
+.introduction img {
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.profile {
+    padding: 0 4%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 100px 310px 310px 310px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+
+.profile h1 {
+    font-size: 28px;
+}
+
+.profile_contents h2 {
+    margin-bottom: 20px;
+}
+
+.profile_contents p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.profile img {
+    width: 320px
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    padding-bottom: 10px;
+    border-bottom: #000 solid 5px;
+}
+
+/*PCレスポンシブ設定*/
+@media screen and (min-width: 600px){
+
+    header {
+        box-sizing: border-box;
+        padding: 0 4%;
+    }
+
+    .resume {
+        margin-left: 45px;
+    }
+
+    header ul {
+        margin-right: 20px;
+    }
+
+    .mainvisual img{
+        width: 1920px;
+        height: 600px;
+        object-fit: cover;
+    }
+
+   .introduction {
+        box-sizing: border-box;
+        width: 960px;
+        margin: 100px auto 0px auto;
+        grid-template-columns: 4.5fr 1fr;
+        grid-template-rows: 80px 50px 100px;
+        gap: 0px;
+        margin-top: 90px;
+   }
+
+   .title {
+        grid-column: 1 / 3;
+    }
+
+    .name {
+        margin-top: 20px;
+        margin-left: 40px;
+        text-align: left;
+    }
+
+    .introduction p{
+        grid-column: 1;
+        grid-row: 3;
+        margin-left: 40px;
+    }
+
+    .introduction img {
+        grid-column: 2;
+        grid-row: 2 / 4;
+    }
+
+    .face_photo {
+        padding-top: 10px;
+    }
+
+    .profile {
+        box-sizing: border-box;
+        width: 960px;
+        margin: 80px auto 90px auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 260px;
+        gap: 15px;
+    }
+
+    .profile .title {
+        grid-column: 1 / 4;
+    }
+    
+    footer {
+        font-size: 12px;
+        border-bottom: #000 solid 1px;
+    }
+
+}
+
