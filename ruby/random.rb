@@ -1,2 +1,5 @@
 group_before = %w[a b c d e f]
-print group_before.shuffle
+group_shuffle = group_before.shuffle
+a = 2
+p group_shuffle[0..a]
+p group_shuffle[a+1..5]
