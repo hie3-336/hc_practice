@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # グループのメンバー一覧を配列に入力する
-GROUP_BEFORE = %w[a b c d e f]
+GROUP_BEFORE.freeze = %w[a b c d e f]
 
 # グループを2つに分けるときに最初に分ける人数を配列に入力する
 # (複数の数値を入力した場合ランダムで選ばれる)
-SPLIT_NUM = [3, 4]
+SPLIT_NUM.freeze = [3, 4]
 
 group_shuffle = GROUP_BEFORE.shuffle
 split = SPLIT_NUM.sample
