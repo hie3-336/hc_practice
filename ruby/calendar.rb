@@ -2,7 +2,9 @@ require 'date'
 today = Date.today
 end_month = Date.new(today.year, today.month, -1).day
 first_wday = (Date.new(today.year, today.month, 1).wday + 6) % 7
-puts first_wday
+test = "\e[30m\e[47mテスト\e[0m \n"
+print test
+
 
 a = "     #{today.month}月 #{today.year} \n月 火 水 木 金 土 日\n"
 
