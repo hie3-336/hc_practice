@@ -1,4 +1,18 @@
 require 'date'
+require 'optparse'
+
+opt = OptionParser.new
+
+params = {}
+opt.on('-m') {|v| params[:m] = v}
+opt.parse!(ARGV)
+# month = ARGV
+p params
+if params[:m]
+  puts ARGV[0].to_i
+end
+
+
 today = Date.today
 end_month = Date.new(today.year, today.month, -1).day
 first_wday = (Date.new(today.year, today.month, 1).wday + 6) % 7
