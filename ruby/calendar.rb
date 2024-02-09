@@ -12,11 +12,8 @@ opt.parse!(ARGV)
 today = Date.today
 
 if params[:m]
-  if ARGV[0] =~ /^([1-9]|10|11|12)$/
-    c_month = ARGV[0].to_i
-  else
-    raise "#{ARGV[0]} is neither a month number (1..12) nor a name"
-  end
+  raise "#{ARGV[0]} is neither a month number (1..12) nor a name" if ARGV[0] !~ /^([1-9]|10|11|12)$/
+  c_month = ARGV[0].to_i
 else
   c_month = today.month
 end
