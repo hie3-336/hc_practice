@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'date'
 require 'optparse'
 
 opt = OptionParser.new
 
 params = {}
-opt.on('-m') {|v| params[:m] = v}
+opt.on('-m') { |v| params[:m] = v }
 opt.parse!(ARGV)
 
 today = Date.today
@@ -19,28 +21,23 @@ else
   c_month = today.month
 end
 
-today = Date.today
 end_month = Date.new(today.year, c_month, -1).day
 first_wday = (Date.new(today.year, c_month, 1).wday + 6) % 7
 
 a = "     #{c_month}月 #{today.year} \n月 火 水 木 金 土 日\n"
 
 first_wday.times do
-  a << "   "
+  a << '   '
 end
 
 end_month.times do |i|
-  if i < 9
-    a << " "
-  end
+  a << ' ' if a < 9
   if !params[:m] && i == today.day - 1
-    a << "\e[30m\e[47m#{i+1}\e[0m "
+    a << "\e[30m\e[47m#{i + 1}\e[0m "
   else
-    a << "#{i+1} "
+    a << "#{i + 1} "
   end
-  if (first_wday + i) % 7 == 6
-    a << "\n"
-  end
+  a << "\n" if (first_wday + i) % 7 == 6
 end
 
 print a
