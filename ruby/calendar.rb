@@ -29,26 +29,26 @@ end_month = Date.new(today.year, c_month, -1).day
 first_wday = (Date.new(today.year, c_month, 1).wday + 6) % 7
 
 # カレンダー上部出力
-text = "     #{c_month}月 #{today.year} \n月 火 水 木 金 土 日\n"
+c_text = "     #{c_month}月 #{today.year} \n月 火 水 木 金 土 日\n"
 
 # 月初日の曜日に1日を出力するために空白を出力
 first_wday.times do
-  text << '   '
+  c_text << '   '
 end
 
 end_month.times do |i|
   # 一桁の日数の場合は出力を合わせるために空白1文字を追加
-  text << ' ' if i < 9
+  c_text << ' ' if i < 9
 
   # オプションを指定せず出力日が今日の場合は白背景出力に変更
-  text << if !params[:m] && i == today.day - 1
+  c_text << if !params[:m] && i == today.day - 1
             "\e[30m\e[47m#{i + 1}\e[0m "
           else
             "#{i + 1} "
           end
 
   # 日曜まで出力したら改行
-  text << "\n" if (first_wday + i) % 7 == 6
+  c_text << "\n" if (first_wday + i) % 7 == 6
 end
 
-print text
+print c_text
