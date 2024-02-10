@@ -42,10 +42,10 @@ end_month.times do |i|
 
   # オプションを指定せず出力日が今日の場合は白背景出力に変更
   c_text << if !params[:m] && i == today.day - 1
-            "\e[30m\e[47m#{i + 1}\e[0m "
-          else
-            "#{i + 1} "
-          end
+              "\e[30m\e[47m#{i + 1}\e[0m "
+            else
+              "#{i + 1} "
+            end
 
   # 日曜まで出力したら改行
   c_text << "\n" if (first_wday + i) % 7 == 6
