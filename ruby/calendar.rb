@@ -11,12 +11,13 @@ opt.parse!(ARGV)
 
 today = Date.today
 
-if params[:m]
-  raise "#{ARGV[0]} is neither a month number (1..12) nor a name" if ARGV[0] !~ /^([1-9]|10|11|12)$/
-  c_month = ARGV[0].to_i
-else
-  c_month = today.month
-end
+c_month = if params[:m]
+            raise "#{ARGV[0]} is neither a month number (1..12) nor a name" if ARGV[0] !~ /^([1-9]|10|11|12)$/
+
+            ARGV[0].to_i
+          else
+            today.month
+          end
 
 end_month = Date.new(today.year, c_month, -1).day
 first_wday = (Date.new(today.year, c_month, 1).wday + 6) % 7
