@@ -3,13 +3,8 @@ p_scores = gets.split(',').map(&:to_i)
 
 raise "各ホールの規定打数とプレイヤーの打数の入力数が異なります" if r_scores.length != p_scores.length
 
-
-
-
 result = []
 r_scores.size.times {|n|
-  p n
-  score = p_scores[n] - r_scores[n] 
   
   # スコア差分だけで結果が求められない例外処理
   if r_scores[n] == 5 && p_scores[n] == 1 
@@ -20,7 +15,7 @@ r_scores.size.times {|n|
     next
   end
 
-  # puts score
+  score = p_scores[n] - r_scores[n] 
 
   case score
   when -3
@@ -38,4 +33,4 @@ r_scores.size.times {|n|
   end
 }
 
-p result
+result.each{ |n| print "#{n}," }
