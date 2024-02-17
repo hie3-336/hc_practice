@@ -16,8 +16,10 @@ r_scores.size.times do |n|
     next
   end
 
+  # 各ホールのスコア差分を取得
   score = p_scores[n] - r_scores[n]
 
+  # スコア差分から結果判定
   result << case score
             when -3
               'アルバトロス'
@@ -34,4 +36,5 @@ r_scores.size.times do |n|
             end
 end
 
+# 結果出力
 print result.join(',')
