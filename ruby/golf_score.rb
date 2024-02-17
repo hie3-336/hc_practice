@@ -34,4 +34,4 @@ r_scores.size.times do |n|
             end
 end
 
-result.each { |n| print "#{n}," }
+print result.join(',')
