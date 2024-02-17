@@ -18,20 +18,20 @@ r_scores.size.times do |n|
 
   score = p_scores[n] - r_scores[n]
 
-  case score
-  when -3
-    result << 'アルバトロス'
-  when -2
-    result << 'イーグル'
-  when -1
-    result << 'バーディ'
-  when 0
-    result << 'パー'
-  when 1
-    result << 'ボギー'
-  else
-    result << "#{score}ボギー"
-  end
+  result << case score
+            when -3
+              'アルバトロス'
+            when -2
+              'イーグル'
+            when -1
+              'バーディ'
+            when 0
+              'パー'
+            when 1
+              'ボギー'
+            else
+              "#{score}ボギー"
+            end
 end
 
 result.each { |n| print "#{n}," }
