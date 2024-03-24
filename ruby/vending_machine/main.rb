@@ -15,8 +15,8 @@ juice.suica = suica
 p vending_machine.check_stock(:pepsi)
 
 p vending_machine.purchase(:pepsi)
-p vending_machine.purchase(:pepsi)
-p vending_machine.purchase(:pepsi)
+p vending_machine.purchase(:monster)
+p vending_machine.purchase(:ilohas)
 
 p suica.check_charge_amount
 p vending_machine.check_sales

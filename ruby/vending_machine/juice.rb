@@ -1,9 +1,9 @@
 require_relative 'suica'
 
 class Juice
-  ITEMS = [:pepsi]
-  PRICE = [150]
-  STOCK = [5]
+  ITEMS = [:pepsi, :monster, :ilohas]
+  PRICE = [150, 230, 120]
+  STOCK = [5, 5, 5]
   SALES = 0
 
   def initialize
