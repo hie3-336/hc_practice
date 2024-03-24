@@ -1,14 +1,31 @@
+require_relative 'suica'
+
 class Juice
   ITEMS = [:pepsi]
   PRICE = [150]
   STOCK = [5]
+  SALES = 0
 
-  # def initialize(item)
-  #   @item = item
-  # end
+  def initialize
+    @stock = STOCK
+    @sales = SALES
+  end
 
   def check_stock(item)
     item_no = ITEMS.index(item)
     STOCK[item_no]
+  end
+
+  def purchase(item)
+    item_no = ITEMS.index(item)
+    charge_amount = suica.check_charge_amount
+
+    raise "You don't have enough money on your card." if charge_amount < PRICE(item_no)
+    raise "I'm sorry, this item is sold out." if @stock[item_no] <= 0
+
+    @stock[item_no] -= 1
+    @sales += PRICE(item_no)
+    suica.spend(PRICE(item_no))
+    
   end
 end

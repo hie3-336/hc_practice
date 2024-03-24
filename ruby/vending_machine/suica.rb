@@ -11,6 +11,10 @@ class Suica
     @charge_amount += charged_money
   end
 
+  def spend(spend_money)
+    @charge_amount -= spend_money
+  end
+
   def check_charge_amount
     @charge_amount
   end
