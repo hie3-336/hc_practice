@@ -22,5 +22,9 @@ class Vending_machine
   def check_sales
     @item.check_sales
   end
+
+  def check_lineup
+    @item.check_lineup
+  end
   
 end

@@ -20,3 +20,4 @@ p vending_machine.purchase(:ilohas)
 
 p suica.check_charge_amount
 p vending_machine.check_sales
+p vending_machine.check_lineup

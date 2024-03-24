@@ -1,5 +1,3 @@
-require_relative 'suica'
-
 class Juice
   ITEMS = [:pepsi, :monster, :ilohas]
   PRICE = [150, 230, 120]
@@ -16,7 +14,7 @@ class Juice
     STOCK[item_no]
   end
 
-  # @itemを外部から変更するメソッド
+  # @suicaを外部から変更するメソッド
   def suica=(value)
     @suica = value
   end
@@ -36,5 +34,9 @@ class Juice
 
   def check_sales
     @sales
+  end
+
+  def check_lineup
+    ITEMS
   end
 end
