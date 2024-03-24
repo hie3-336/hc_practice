@@ -19,3 +19,4 @@ p vending_machine.purchase
 p vending_machine.purchase
 
 p suica.check_charge_amount
+p vending_machine.check_sales

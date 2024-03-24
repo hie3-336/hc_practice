@@ -32,6 +32,9 @@ class Juice
     @stock[item_no] -= 1
     @sales += PRICE[item_no]
     @suica.spend(PRICE[item_no])
-    
+  end
+
+  def check_sales
+    @sales
   end
 end

@@ -21,4 +21,9 @@ class Vending_machine
   def purchase
     @item.purchase(@lineup)
   end
+
+  def check_sales
+    @item.check_sales
+  end
+  
 end
