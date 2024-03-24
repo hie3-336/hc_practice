@@ -1,4 +1,5 @@
 class Suica
+
   DEPOSIT = 500
 
   def initialize

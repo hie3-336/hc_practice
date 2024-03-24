@@ -16,16 +16,22 @@ class Juice
     STOCK[item_no]
   end
 
+  # @itemを外部から変更するメソッド
+  def suica=(value)
+    @suica = value
+  end
+  
+
   def purchase(item)
     item_no = ITEMS.index(item)
-    charge_amount = suica.check_charge_amount
+    charge_amount = @suica.check_charge_amount
 
-    raise "You don't have enough money on your card." if charge_amount < PRICE(item_no)
+    raise "You don't have enough money on your card." if charge_amount < PRICE[item_no]
     raise "I'm sorry, this item is sold out." if @stock[item_no] <= 0
 
     @stock[item_no] -= 1
-    @sales += PRICE(item_no)
-    suica.spend(PRICE(item_no))
+    @sales += PRICE[item_no]
+    @suica.spend(PRICE[item_no])
     
   end
 end

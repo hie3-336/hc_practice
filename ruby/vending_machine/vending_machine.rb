@@ -9,7 +9,7 @@ class Vending_machine
   #   @item
   # end
 
-  # @tesを外部から変更するメソッド
+  # @itemを外部から変更するメソッド
   def item=(value)
     @item = value
   end
@@ -18,4 +18,7 @@ class Vending_machine
     @item.check_stock(@lineup)
   end
 
+  def purchase
+    @item.purchase(@lineup)
+  end
 end
