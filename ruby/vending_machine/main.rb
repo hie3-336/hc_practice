@@ -1,5 +1,4 @@
 require_relative 'vending_machine'
-
 require_relative 'suica'
 require_relative 'juice'
 
@@ -7,7 +6,7 @@ suica = Suica.new
 juice = Juice.new
 
 vending_machine = Vending_machine.new
-vending_machine.item = juice
+vending_machine.juice = juice
 
 # ↓????
 juice.suica = suica

@@ -7,24 +7,24 @@ class Vending_machine
   # end
 
   # @itemを外部から変更するメソッド
-  def item=(value)
-    @item = value
+  def juice=(value)
+    @juice = value
   end
 
   def check_stock(lineup)
-    @item.check_stock(lineup)
+    @juice.check_stock(lineup)
   end
 
   def purchase(lineup)
-    @item.purchase(lineup)
+    @juice.purchase(lineup)
   end
 
   def check_sales
-    @item.check_sales
+    @juice.check_sales
   end
 
   def check_lineup
-    @item.check_lineup
+    @juice.check_lineup
   end
   
 end
