@@ -14,12 +14,16 @@ vending_machine = Vending_machine.new
 
 vending_machine.suica = suica
 
-p vending_machine.check_stock
+suica.charge(1000)
 
-p vending_machine.purchase
-p vending_machine.purchase
-p vending_machine.purchase
+p vending_machine.check_stock('pepsi')
+
+p vending_machine.purchase('pepsi')
+p vending_machine.purchase('ilohas')
+p vending_machine.purchase('ilohas')
+p vending_machine.purchase('monster')
 
 p suica.check_charge_amount
 p vending_machine.check_sales
-p vending_machine.check_stock
+p vending_machine.check_stock('pepsi')
+p vending_machine.check_stock('ilohas')

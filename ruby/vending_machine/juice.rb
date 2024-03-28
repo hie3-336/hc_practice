@@ -15,6 +15,10 @@ class Juice
     @price
   end
 
+  def check_item
+    @item
+  end
+
   # @suicaを外部から変更するメソッド
   # def suica=(value)
   #   @suica = value
