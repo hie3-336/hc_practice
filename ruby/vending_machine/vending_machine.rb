@@ -1,19 +1,13 @@
 require_relative 'juice'
 class Vending_machine
 
-  # @itemを外部から参照するメソッド
-  # def item
-  #   @item
-  # end
   def initialize
     @juices = [Juice.new(item: 'pepsi', price: 150, stock: 5),
               Juice.new(item: 'monster', price: 230, stock: 5),
               Juice.new(item: 'ilohas', price: 120, stock: 5)]
     @sales = 0
   end
-  # juice = Juice.new
-  # juice.suica = suica
-
+  
   def find_item(i)
     @juices.find{|n| n.check_item == i}
   end
@@ -22,7 +16,6 @@ class Vending_machine
     @juices.map do |juice|
       juice.check_item if juice.check_stock.positive?
     end.compact
-    # @juices.map(&:check_item).join(' ')
   end
 
 
@@ -37,8 +30,6 @@ class Vending_machine
 
   def purchase(item)
     price = find_item(item).check_price
-
-    # 二度手間かも
     stock = find_item(item).check_stock
 
     charge_amount = @suica.check_charge_amount
@@ -58,9 +49,5 @@ class Vending_machine
   def check_sales
     @sales
   end
-
-  # def check_lineup
-  #   @juice.check_lineup
-  # end
   
 end
