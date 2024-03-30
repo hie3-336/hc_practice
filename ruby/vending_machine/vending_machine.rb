@@ -18,8 +18,15 @@ class Vending_machine
     @juices.find{|n| n.check_item == i}
   end
 
+  def check_itemlist
+    @juices.map do |juice|
+      juice.check_item if juice.check_stock.positive?
+    end.compact
+    # @juices.map(&:check_item).join(' ')
+  end
 
-  # @itemを外部から変更するメソッド
+
+  # @suicaを外部から変更するメソッド
   def suica=(value)
     @suica = value
   end
