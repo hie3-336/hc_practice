@@ -30,3 +30,5 @@ p vending_machine.check_sales
 p vending_machine.check_stock('pepsi')
 p vending_machine.check_stock('ilohas')
 p vending_machine.check_itemlist
+p vending_machine.replenish_stock('ilohas',1)
+p vending_machine.check_itemlist

@@ -51,6 +51,10 @@ class Vending_machine
     @sales += price
   end
 
+  def replenish_stock(item, num)
+    find_item(item).replenish_stock(num)
+  end
+
   def check_sales
     @sales
   end

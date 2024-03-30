@@ -19,6 +19,10 @@ class Juice
     @item
   end
 
+  def replenish_stock(num)
+    @stock += num
+  end
+
   # @suicaを外部から変更するメソッド
   # def suica=(value)
   #   @suica = value
