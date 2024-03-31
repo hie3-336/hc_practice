@@ -1,6 +1,6 @@
 require_relative 'juice'
-class Vending_machine
-
+# 自販機に関する動作を扱うクラス
+class VendingMachine
   def initialize
     @juices = [Juice.new(item: 'pepsi', price: 150, stock: 5),
               Juice.new(item: 'monster', price: 230, stock: 5),
@@ -8,10 +8,12 @@ class Vending_machine
     @sales = 0
   end
 
+  # 複数の品物のうち、該当の品物のインスタンスを検索する処理
   def find_item(i)
     @juices.find{|n| n.check_item == i}
   end
 
+  # 品物のラインナップを返す処理(在庫が0の場合非表示) 
   def check_itemlist
     @juices.map do |juice|
       juice.check_item if juice.check_stock.positive?
@@ -23,10 +25,12 @@ class Vending_machine
     @suica = value
   end
 
+  # 在庫数を確認する処理
   def check_stock(item)
     find_item(item).check_stock
   end
 
+  # 品物購入処理
   def purchase(item)
     price = find_item(item).check_price
     stock = find_item(item).check_stock
@@ -41,16 +45,19 @@ class Vending_machine
     @sales += price
   end
 
+  # 品物を補充する処理
   def replenish_stock(item, num)
     find_item(item).replenish_stock(num)
   end
 
+  # 売上金額を確認する処理
   def check_sales
     sales
   end
 
   private
 
+  # 売上金額を取得する処理(private)
   def sales
     @sales
   end

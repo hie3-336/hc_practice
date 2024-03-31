@@ -1,9 +1,10 @@
+# 自販機の購入デモを行うメイン処理
 require_relative 'vending_machine'
 require_relative 'suica'
 
 suica = Suica.new
 
-vending_machine = Vending_machine.new
+vending_machine = VendingMachine.new
 
 vending_machine.suica = suica
 
