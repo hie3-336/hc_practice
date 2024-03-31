@@ -1,3 +1,4 @@
+
 class Suica
 
   DEPOSIT = 500
@@ -17,6 +18,12 @@ class Suica
   end
 
   def check_charge_amount
+    charge_amount
+  end
+
+  private
+
+  def charge_amount
     @charge_amount
   end
 end

@@ -7,7 +7,7 @@ class Vending_machine
               Juice.new(item: 'ilohas', price: 120, stock: 5)]
     @sales = 0
   end
-  
+
   def find_item(i)
     @juices.find{|n| n.check_item == i}
   end
@@ -17,7 +17,6 @@ class Vending_machine
       juice.check_item if juice.check_stock.positive?
     end.compact
   end
-
 
   # @suicaを外部から変更するメソッド
   def suica=(value)
@@ -47,7 +46,13 @@ class Vending_machine
   end
 
   def check_sales
+    sales
+  end
+
+  private
+
+  def sales
     @sales
   end
-  
+
 end
