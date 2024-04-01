@@ -1,24 +1,12 @@
 # ジュースに関する動作を取り扱うクラス
 class Juice
+
+  attr_reader :check_stock, :check_price, :check_item
+
   def initialize(item:, price:, stock:)
     @item = item
     @price = price
     @stock = stock
-  end
-
-  # 在庫確認
-  def check_stock
-    @stock
-  end
-
-  # 値段確認
-  def check_price
-    @price
-  end
-
-  # 品物名確認
-  def check_item
-    @item
   end
 
   # 在庫補充
