@@ -2,10 +2,21 @@ require_relative 'juice'
 # 自販機に関する動作を扱うクラス
 class VendingMachine
   def initialize
-    @juices = [Juice.new(item: 'pepsi', price: 150, stock: 5),
-               Juice.new(item: 'monster', price: 230, stock: 5),
-               Juice.new(item: 'ilohas', price: 120, stock: 5)]
+    @stock = []
+      5.times do
+        @stock << Juice.new(item: 'pepsi', price: 150)
+      end
+
+      5.times do
+        @stock << Juice.new(item: 'monster', price: 230)
+      end
+
+      5.times do
+        @stock << Juice.new(item: 'ilohas', price: 120)
+      end
     @sales = 0
+    p @stock
+    p @stock[1].check_item
   end
 
   # 複数の品物のうち、該当の品物のインスタンスを検索する処理
@@ -13,11 +24,17 @@ class VendingMachine
     @juices.find { |n| n.check_item == item }
   end
 
+  # stockを品物一覧として変換する処理
+  def itemlist
+    @stock.map do |juice|
+      juice.check_item
+    end
+  
+  end
+
   # 品物のラインナップを返す処理(在庫が0の場合非表示)
   def check_itemlist
-    @juices.map do |juice|
-      juice.check_item if juice.check_stock.positive?
-    end.compact
+    itemlist.uniq
   end
 
   # @suicaを外部から変更するメソッド
@@ -27,20 +44,23 @@ class VendingMachine
 
   # 在庫数を確認する処理
   def check_stock(item)
-    find_item(item).check_stock
+    itemlist.count(item)
   end
 
   # 品物購入処理
   def purchase(item)
-    price = find_item(item).check_price
-    stock = find_item(item).check_stock
 
+    item_no = itemlist.find_index(item)
+    p itemlist
+
+    raise "I'm sorry, this item is sold out." if item_no.nil?
+
+    price = @stock[item_no].check_price
     charge_amount = @suica.check_charge_amount
 
     raise "You don't have enough money on your card." if charge_amount < price
-    raise "I'm sorry, this item is sold out." if stock <= 0
 
-    find_item(item).purchase
+    @stock.delete(item_no)
     @suica.spend(price)
     @sales += price
   end
