@@ -1,15 +1,18 @@
 require_relative 'juice'
+
 # 自販機に関する動作を扱うクラス
 class VendingMachine
   attr_reader :sales
+  attr_writer :suica
   private :sales
 
   # 3種類のジュースの初期設定
   JUICES = [
-    {set_item: 'pepsi', set_price: 150, set_stock: 5},
-    {set_item: 'monster', set_price: 230, set_stock: 5},
-    {set_item: 'ilohas', set_price: 120, set_stock: 5}
+    { set_item: 'pepsi', set_price: 150, set_stock: 5 },
+    { set_item: 'monster', set_price: 230, set_stock: 5 },
+    { set_item: 'ilohas', set_price: 120, set_stock: 5 }
   ]
+
   def initialize
     # 在庫初期設定
     @stock = []
@@ -23,19 +26,12 @@ class VendingMachine
 
   # stockを品物一覧として変換する処理
   def itemlist
-    @stock.map do |juice|
-      juice.item
-    end
+    @stock.map(&:item)
   end
 
   # 品物のラインナップを返す処理(在庫が0の場合非表示)
   def check_itemlist
     itemlist.uniq
-  end
-
-  # @suicaを外部から変更するメソッド
-  def suica=(value)
-    @suica = value
   end
 
   # 在庫数を確認する処理
