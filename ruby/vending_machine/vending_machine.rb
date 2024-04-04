@@ -1,19 +1,20 @@
 require_relative 'juice'
 # 自販機に関する動作を扱うクラス
 class VendingMachine
+  JUICES = [
+    {set_item: 'pepsi', set_price: 150, set_stock: 5},
+    {set_item: 'monster', set_price: 230, set_stock: 5},
+    {set_item: 'ilohas', set_price: 120, set_stock: 5}
+  ]
   def initialize
     @stock = []
-      5.times do
-        @stock << Juice.new(item: 'pepsi', price: 150)
-      end
 
-      5.times do
-        @stock << Juice.new(item: 'monster', price: 230)
+    JUICES.each do |n|
+      n[:set_stock].times do
+        @stock << Juice.new(item: n[:set_item], price: n[:set_price])
       end
+    end
 
-      5.times do
-        @stock << Juice.new(item: 'ilohas', price: 120)
-      end
     @sales = 0
     p @stock
     p @stock[1].check_item
@@ -51,7 +52,6 @@ class VendingMachine
   def purchase(item)
 
     item_no = itemlist.find_index(item)
-    p itemlist
 
     raise "I'm sorry, this item is sold out." if item_no.nil?
 
