@@ -4,20 +4,20 @@ class VendingMachine
   attr_reader :sales
   private :sales
 
+  # 3種類のジュースの初期設定
   JUICES = [
     {set_item: 'pepsi', set_price: 150, set_stock: 5},
     {set_item: 'monster', set_price: 230, set_stock: 5},
     {set_item: 'ilohas', set_price: 120, set_stock: 5}
   ]
   def initialize
+    # 在庫初期設定
     @stock = []
-
     JUICES.each do |n|
       n[:set_stock].times do
         @stock << Juice.new(item: n[:set_item], price: n[:set_price])
       end
     end
-
     @sales = 0
   end
 
@@ -45,20 +45,16 @@ class VendingMachine
 
   # 品物購入処理
   def purchase(item)
-
     item_no = itemlist.find_index(item)
-
     raise "I'm sorry, this item is sold out." if item_no.nil?
 
     price = @stock[item_no].price
     charge_amount = @suica.check_charge_amount
-
     raise "You don't have enough money on your card." if charge_amount < price
 
     @stock.delete_at(item_no)
     @suica.spend(price)
     @sales += price
-
   end
 
   # 品物を補充する処理
