@@ -1,5 +1,8 @@
 # スイカに関する処理を取り扱うクラス
 class Suica
+  attr_reader :charge_amount
+  private :charge_amount
+
   # 初期チャージ金額は500円
   DEPOSIT = 500
 
@@ -22,12 +25,5 @@ class Suica
   # スイカのチャージ金額を確認する処理
   def check_charge_amount
     charge_amount
-  end
-
-  private
-
-  # スイカのチャージ金額を取得する処理(private)
-  def charge_amount
-    @charge_amount
   end
 end

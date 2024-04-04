@@ -1,6 +1,9 @@
 require_relative 'juice'
 # 自販機に関する動作を扱うクラス
 class VendingMachine
+  attr_reader :sales
+  private :sales
+
   JUICES = [
     {set_item: 'pepsi', set_price: 150, set_stock: 5},
     {set_item: 'monster', set_price: 230, set_stock: 5},
@@ -69,12 +72,5 @@ class VendingMachine
   # 売上金額を確認する処理
   def check_sales
     sales
-  end
-
-  private
-
-  # 売上金額を取得する処理(private)
-  def sales
-    @sales
   end
 end
