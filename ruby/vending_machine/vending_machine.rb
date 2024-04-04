@@ -60,9 +60,11 @@ class VendingMachine
 
     raise "You don't have enough money on your card." if charge_amount < price
 
-    @stock.delete(item_no)
+    @stock.delete_at(item_no)
     @suica.spend(price)
     @sales += price
+    
+    
   end
 
   # 品物を補充する処理
