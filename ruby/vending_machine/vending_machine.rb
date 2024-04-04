@@ -16,13 +16,6 @@ class VendingMachine
     end
 
     @sales = 0
-    p @stock
-    p @stock[1].check_item
-  end
-
-  # 複数の品物のうち、該当の品物のインスタンスを検索する処理
-  def find_item(item)
-    @juices.find { |n| n.check_item == item }
   end
 
   # stockを品物一覧として変換する処理
@@ -30,7 +23,6 @@ class VendingMachine
     @stock.map do |juice|
       juice.check_item
     end
-  
   end
 
   # 品物のラインナップを返す処理(在庫が0の場合非表示)
@@ -63,13 +55,15 @@ class VendingMachine
     @stock.delete_at(item_no)
     @suica.spend(price)
     @sales += price
-    
-    
+
   end
 
   # 品物を補充する処理
   def replenish_stock(item, num)
-    find_item(item).replenish_stock(num)
+    replenish_item = JUICES.find {|n| n[:set_item] == item}
+    num.times do
+      @stock << Juice.new(item: replenish_item[:set_item], price: replenish_item[:set_price])
+    end
   end
 
   # 売上金額を確認する処理
