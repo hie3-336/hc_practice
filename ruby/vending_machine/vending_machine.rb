@@ -21,7 +21,7 @@ class VendingMachine
   # stockを品物一覧として変換する処理
   def itemlist
     @stock.map do |juice|
-      juice.check_item
+      juice.item
     end
   end
 
@@ -47,7 +47,7 @@ class VendingMachine
 
     raise "I'm sorry, this item is sold out." if item_no.nil?
 
-    price = @stock[item_no].check_price
+    price = @stock[item_no].price
     charge_amount = @suica.check_charge_amount
 
     raise "You don't have enough money on your card." if charge_amount < price
