@@ -6,4 +6,8 @@ p poke.name
 p poke.type1
 poke.attack
 
+pika = Pikachu.new(name: 'ピカチュウ', type1: 'でんき', type2: '', hp: 100)
 
+p pika.name
+p pika.type1
+pika.attack
