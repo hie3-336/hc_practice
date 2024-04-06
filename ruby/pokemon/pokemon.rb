@@ -1,4 +1,4 @@
-class Pokemon 
+module Pokemon 
   attr_reader :name, :type1, :type2, :hp
 
   def initialize(name:, type1:, type2:, hp:)
@@ -13,7 +13,8 @@ class Pokemon
   end
 end
 
-class Pikachu < Pokemon
+class Pikachu
+  include Pokemon
 
   def attack
     super
