@@ -1,11 +1,11 @@
 class Pokemon 
   attr_reader :name, :type1, :type2, :hp
 
-  def initialize
-    @name = 'リザードン'
-    @type1 = 'ほのお'
-    @type2 = 'ひこう'
-    @hp = 100
+  def initialize(name:, type1:, type2:, hp:)
+    @name = name
+    @type1 = type1
+    @type2 = type2
+    @hp = hp
   end
 
   def attack
