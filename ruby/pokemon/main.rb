@@ -1,13 +1,19 @@
 require_relative 'pokemon'
 
-# poke = Pokemon.new(name: 'リザードン', type1: 'ほのお', type2: 'ひこう', hp: 100)
-
-# p poke.name
-# p poke.type1
-# poke.attack
-
 pika = Pikachu.new(name: 'ピカチュウ', type1: 'でんき', type2: '', hp: 100)
 
-p pika.name
+# 名前表示
+p pika.find_name
+
+# タイプ表示
 p pika.type1
+
+# ピカチュウの攻撃
 pika.attack
+
+# 名前変更
+pika.change_name('たろう')
+p pika.find_name
+
+# 以下は「不適切な名前」の例外発生
+# pika.change_name('うんこ')
