@@ -40,6 +40,28 @@
   created_at { label: "datatime, not null"}
   updated_at { label: "datatime, not null"}
 
+[followers]
+  *id {label: "bigint, not null"}
+  user_id {label: "varchar, not null, FK(users)"}
+  follower_id {label: "varchar, not null, FK(users)"}
+  created_at { label: "datatime, not null"}
+  updated_at { label: "datatime, not null"}
+
+[directmessages]
+  *id {label: "bigint, not null"}
+  user_id {label: "varchar, not null, FK(users)"}
+  senduser_id {label: "varchar, not null, FK(users)"}
+  message_text {label: "varchar, not null"}
+  created_at { label: "datatime, not null"}
+  updated_at { label: "datatime, not null"}
+
+[notices]
+  *id {label: "bigint, not null"}
+  user_id {label: "varchar, not null, FK(users)"}
+  notice {label: "varchar, not null"}
+  created_at { label: "datatime, not null"}
+  updated_at { label: "datatime, not null"}
+
 # Cardinality    Syntax
 # 0 or 1         ?
 # exactly 1      1
