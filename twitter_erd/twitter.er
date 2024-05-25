@@ -67,4 +67,10 @@
 # exactly 1      1
 # 0 or more      *
 # 1 or more      +
-users *--1 `items`
+`users` 1--* tweets
+tweets *--1 `likes`
+tweets *--1 `retweets`
+tweets *--1 `bookmarks`
+followers *--1 `tweets`
+directmessages *--1 `tweets`
+notices *--1 `tweets`
