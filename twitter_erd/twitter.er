@@ -15,7 +15,7 @@
 [tweets]
   *id {label: "varchar, not null"}
   user_id {label: "varchar, not null, FK(users)"}
-  tweet_text {label: "varchar(140), not null"}
+  content {label: "varchar(140), not null"}
   created_at { label: "datatime, not null"}
   updated_at { label: "datatime, not null"}
 
@@ -42,23 +42,23 @@
 
 [followers]
   *id {label: "bigint, not null"}
-  user_id {label: "varchar, not null, FK(users)"}
+  followee_id {label: "varchar, not null, FK(users)"}
   follower_id {label: "varchar, not null, FK(users)"}
   created_at { label: "datatime, not null"}
   updated_at { label: "datatime, not null"}
 
-[directmessages]
+[direct_messages]
   *id {label: "bigint, not null"}
-  user_id {label: "varchar, not null, FK(users)"}
-  senduser_id {label: "varchar, not null, FK(users)"}
-  message_text {label: "varchar, not null"}
+  sender_id {label: "varchar, not null, FK(users)"}
+  recipient_id {label: "varchar, not null, FK(users)"}
+  content {label: "varchar, not null"}
   created_at { label: "datatime, not null"}
   updated_at { label: "datatime, not null"}
 
 [notices]
   *id {label: "bigint, not null"}
   user_id {label: "varchar, not null, FK(users)"}
-  notice {label: "varchar, not null"}
+  content {label: "varchar, not null"}
   created_at { label: "datatime, not null"}
   updated_at { label: "datatime, not null"}
 
