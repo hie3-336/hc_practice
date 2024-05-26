@@ -71,6 +71,6 @@
 tweets *--1 `likes`
 tweets *--1 `retweets`
 tweets *--1 `bookmarks`
-followers *--1 `tweets`
-directmessages *--1 `tweets`
-notices *--1 `tweets`
+followers *--1 `users`
+directmessages *--1 `users`
+notices *--1 `users`
