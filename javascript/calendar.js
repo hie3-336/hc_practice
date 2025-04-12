@@ -42,7 +42,7 @@ while (d <= getLastDay(year, month)) {
     dayOutput = '\x1b[30m\x1b[47m' + dayOutput + '\x1b[0m\x1b[49m';
   }
   process.stdout.write(`${dayOutput} `);
-  if (d % 7 === (7 - firstWeekday)) {
+  if ((d + firstWeekday) % 7 === 0 ) {
     console.log('');
   }
   d++;
