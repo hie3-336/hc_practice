@@ -7,7 +7,7 @@ const getLastDay = (year, month) => {
 
 let year = nowDate.getFullYear();
 let month = nowDate.getMonth() + 1;
-let day = nowDate.getDay();
+let date = nowDate.getDate();
 
 if (process.argv[2] === "-m") {
   month = process.argv[3];
@@ -33,9 +33,13 @@ let brank = '   '.repeat(firstWeekday);
 process.stdout.write(brank);
 while (d <= getLastDay(year, month)) {
   let dayOutput = d < 10 ? ' ' + String(d) : String(d) ;
+  if (process.argv[2] === undefined && d === date) {
+    dayOutput = '\x1b[30m\x1b[47m' + dayOutput + '\x1b[0m\x1b[49m';
+  }
   process.stdout.write(`${dayOutput} `);
   if (d % 7 === (7 - firstWeekday)) {
     console.log('');
   }
+
   d++;
 }
